@@ -1,0 +1,21 @@
+.mycart{
+    width: 100%;
+    background-color: white;
+    max-width: 400px;
+    height: 100vh;
+    top:0;
+    right:0;
+    position: fixed;
+    z-index: 1;
+    padding:100px 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: space-between;
+    transform: translate(110%,0);
+    transition: all 400ms ease;
+}
+.mycartactive{
+    transform: translate(0,0);
+    
+}

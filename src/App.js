@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Cart from "./componentes/Cart/Cart";
+import Header from "./componentes/Header/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Products from "./componentes/Products/Products";
+import Provider from "./context/provider";
+import Pagamentos from "./componentes/Pagamentos/Pagamentos";
+import FinalizaCompra from "./componentes/FinalizaCompra/FinalizaCompra";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-mygray">
+      <Router>
+        <Provider>
+          <Header />
+          <Routes>
+            <Route path="/pagamentos" element={<Pagamentos />} />
+            <Route path="/finaliza_compra" element={<FinalizaCompra />} />
+            <Route path="/" element={<Products />} />
+          </Routes>
+          <Cart />
+        </Provider>
+      </Router>
     </div>
   );
 }
